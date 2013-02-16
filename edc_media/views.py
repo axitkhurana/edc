@@ -7,4 +7,4 @@ from about.models import Member
 
 
 def index(request):
-    return render_to_response('edc_media/index.html',{'name':'Media','list':menu,},context_instance=RequestContext(request))
+    return render_to_response('edc_media/index.html', {'name': 'Media', 'list': menu, }, context_instance=RequestContext(request))

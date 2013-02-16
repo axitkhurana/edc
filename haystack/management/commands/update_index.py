@@ -23,19 +23,19 @@ class Command(AppCommand):
     help = "Freshens the index for the given app(s)."
     base_options = (
         make_option('-a', '--age', action='store', dest='age',
-            default=DEFAULT_AGE, type='int',
-            help='Number of hours back to consider objects new.'
-        ),
+                    default=DEFAULT_AGE, type='int',
+                    help='Number of hours back to consider objects new.'
+                    ),
         make_option('-b', '--batch-size', action='store', dest='batchsize',
-            default=DEFAULT_BATCH_SIZE, type='int',
-            help='Number of items to index at once.'
-        ),
+                    default=DEFAULT_BATCH_SIZE, type='int',
+                    help='Number of items to index at once.'
+                    ),
         make_option('-s', '--site', action='store', dest='site',
-            type='string', help='The site object to use when reindexing (like `search_sites.mysite`).'
-        ),
+                    type='string', help='The site object to use when reindexing (like `search_sites.mysite`).'
+                    ),
         make_option('-r', '--remove', action='store_true', dest='remove',
-            default=False, help='Remove objects from the index that are no longer present in the database.'
-        ),
+                    default=False, help='Remove objects from the index that are no longer present in the database.'
+                    ),
     )
     option_list = AppCommand.option_list + base_options
 
@@ -49,9 +49,9 @@ class Command(AppCommand):
     if verbosity_present is False:
         option_list = option_list + (
             make_option('--verbosity', action='store', dest='verbosity', default='1',
-                type='choice', choices=['0', '1', '2'],
-                help='Verbosity level; 0=minimal output, 1=normal output, 2=all output'
-            ),
+                        type='choice', choices=['0', '1', '2'],
+                        help='Verbosity level; 0=minimal output, 1=normal output, 2=all output'
+                        ),
         )
 
     def handle(self, *apps, **options):
@@ -134,7 +134,7 @@ class Command(AppCommand):
                     pks_seen.add(smart_str(obj.pk))
 
                 if self.verbosity >= 2:
-                    print "  indexing %s - %d of %d." % (start+1, end, total)
+                    print "  indexing %s - %d of %d." % (start + 1, end, total)
 
                 index.backend.update(index, current_qs)
 

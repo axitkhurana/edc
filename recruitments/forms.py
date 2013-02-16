@@ -10,16 +10,16 @@ from django.core.exceptions import ObjectDoesNotExist
 class CandidateForm(forms.ModelForm):
     class Meta:
         model = Candidate
-        exclude = ('hash_value','blocked','setup','slot')
+        exclude = ('hash_value', 'blocked', 'setup', 'slot')
 
     def clean(self):
         cleaned_data = self.cleaned_data
         email = cleaned_data.get('email')
 
         try:
-            s = Setup.objects.get(date_recruitment_ends__gt=datetime.now(),date_recruitment_starts__lt=datetime.now())
+            s = Setup.objects.get(date_recruitment_ends__gt=datetime.now(), date_recruitment_starts__lt=datetime.now())
 
-            Candidate.objects.get(email=email,setup=s)
+            Candidate.objects.get(email=email, setup=s)
             raise forms.ValidationError('This Email ID has already applied for this recruitment process')
         except ObjectDoesNotExist:
             pass

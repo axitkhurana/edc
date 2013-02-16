@@ -331,8 +331,10 @@ class FacetField(SearchField):
 class FacetCharField(FacetField, CharField):
     pass
 
+
 class FacetIntegerField(FacetField, IntegerField):
     pass
+
 
 class FacetFloatField(FacetField, FloatField):
     pass

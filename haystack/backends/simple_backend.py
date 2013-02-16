@@ -68,7 +68,7 @@ class SearchBackend(BaseSearchBackend):
 
                             queries.append(Q(**{'%s__icontains' % field.name: term}))
 
-                        qs = model.objects.filter(reduce(lambda x, y: x|y, queries))
+                        qs = model.objects.filter(reduce(lambda x, y: x | y, queries))
 
                 hits += len(qs)
 

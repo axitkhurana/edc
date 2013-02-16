@@ -190,7 +190,6 @@ class SearchQuerySet(object):
         self._result_cache[start:start + len(to_cache)] = to_cache
         return True
 
-
     def __getitem__(self, k):
         """
         Retrieves an item or slice from the set of results.
@@ -200,7 +199,7 @@ class SearchQuerySet(object):
         assert ((not isinstance(k, slice) and (k >= 0))
                 or (isinstance(k, slice) and (k.start is None or k.start >= 0)
                     and (k.stop is None or k.stop >= 0))), \
-                "Negative indexing is not supported."
+            "Negative indexing is not supported."
 
         # Remember if it's a slice or not. We're going to treat everything as
         # a slice to simply the logic and will `.pop()` at the end as needed.
@@ -231,9 +230,7 @@ class SearchQuerySet(object):
         else:
             return self._result_cache[start]
 
-
     # Methods that return a SearchQuerySet.
-
     def all(self):
         """Returns all results for the query."""
         return self._clone()
@@ -428,9 +425,7 @@ class SearchQuerySet(object):
         clone = self._clone()
         return clone.query.get_spelling_suggestion(preferred_query)
 
-
     # Utility methods.
-
     def _clone(self, klass=None):
         if klass is None:
             klass = self.__class__
@@ -579,7 +574,7 @@ class RelatedSearchQuerySet(SearchQuerySet):
         assert ((not isinstance(k, slice) and (k >= 0))
                 or (isinstance(k, slice) and (k.start is None or k.start >= 0)
                     and (k.stop is None or k.stop >= 0))), \
-                "Negative indexing is not supported."
+            "Negative indexing is not supported."
 
         # Remember if it's a slice or not. We're going to treat everything as
         # a slice to simply the logic and will `.pop()` at the end as needed.

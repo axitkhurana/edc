@@ -318,12 +318,12 @@ class SearchBackend(BaseSearchBackend):
                     narrowed_results = recent_narrowed_results
 
         self.index = self.index.refresh()
-        #Index is correct!
+        # Index is correct!
 
         if self.index.doc_count():
             searcher = self.index.searcher()
             parsed_query = self.parser.parse(query_string)
-            #Term('text',u'pink')
+            # Term('text',u'pink')
 
             # In the event of an invalid/stopworded query, recover gracefully.
             if parsed_query is None:
@@ -342,7 +342,7 @@ class SearchBackend(BaseSearchBackend):
             # Handle the case where the results have been narrowed.
             print narrowed_results
 
-            #User edit. Uncomment for original
+            # User edit. Uncomment for original
             if narrowed_results:
                 raw_results.filter(narrowed_results)
 
@@ -362,7 +362,6 @@ class SearchBackend(BaseSearchBackend):
 
             # Increment because Whoosh uses 1-based page numbers.
             page_num += 1
-
 
             try:
                 raw_page = ResultsPage(raw_results, page_num, page_length)
@@ -457,7 +456,6 @@ class SearchBackend(BaseSearchBackend):
                 spelling_suggestion = self.create_spelling_suggestion(spelling_query)
             else:
                 spelling_suggestion = self.create_spelling_suggestion(query_string)
-
 
         return {
             'results': results,

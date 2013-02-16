@@ -6,15 +6,15 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-     ('Akshit Khurana', 'axitkhurana@gmail.com'),
-     ('Vikesh Khanna', 'khanna.vikesh@gmail.com'),
+    ('Akshit Khurana', 'axitkhurana@gmail.com'),
+    ('Vikesh Khanna', 'khanna.vikesh@gmail.com'),
 )
 
 MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'sqlite3',  # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': '/home/axitkhurana/db/edc.sql',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
@@ -68,13 +68,13 @@ ADMIN_MEDIA_PREFIX = '/admin_media/'
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '04e@jm7ge+x83@(!g(%21e!(ac8sgljlo*8kn1xkj=1k$g3+26'
 
-#RECAPTCHA_PUBLIC_KEY = '6LfzZtcSAAAAALAeNAvthwBoERw_VBTcvZbIvTYC'
-#RECAPTCHA_PRIVATE_KEY = '6LfzZtcSAAAAAMphQIhI9E16Y2knTHPzDo-W7Kmt'
+# RECAPTCHA_PUBLIC_KEY = '6LfzZtcSAAAAALAeNAvthwBoERw_VBTcvZbIvTYC'
+# RECAPTCHA_PRIVATE_KEY = '6LfzZtcSAAAAAMphQIhI9E16Y2knTHPzDo-W7Kmt'
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    #     'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -88,26 +88,26 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'edc.urls'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-        "django.core.context_processors.request",
-        "django.contrib.auth.context_processors.auth",
-        "django.core.context_processors.debug",
-        "django.core.context_processors.i18n",
-        "django.core.context_processors.media",
-        "django.contrib.messages.context_processors.messages"
+    "django.core.context_processors.request",
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.contrib.messages.context_processors.messages"
 )
 
-EMAIL_HOST='smtp.webfaction.com'
-EMAIL_HOST_USER='edciitr'
-EMAIL_HOST_PASSWORD='edciitrnumber1'
-EMAIL_PORT=25
+EMAIL_HOST = 'smtp.webfaction.com'
+EMAIL_HOST_USER = 'edciitr'
+EMAIL_HOST_PASSWORD = 'edciitrnumber1'
+EMAIL_PORT = 25
 DEFAULT_FROM_EMAIL = "noreply@edciitr.com"
 SERVER_EMAIL = "admin@domain.com"
 EMAIL_USE_TLS = False
 
 TEMPLATE_DIRS = (
-                os.path.join(os.path.dirname(__file__), "templates"),
-                "/home/edciitr/webapps/django/edc/templates/",
-        # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    os.path.join(os.path.dirname(__file__), "templates"),
+    "/home/edciitr/webapps/django/edc/templates/",
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
@@ -135,22 +135,22 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 )
 
-#haystack settings
+# haystack settings
 HAYSTACK_SITECONF = 'haystack.search_sites'
 HAYSTACK_SEARCH_ENGINE = 'whoosh'
-HAYSTACK_WHOOSH_PATH = os.path.join(os.path.dirname(__file__),'haystack/whoosh')
+HAYSTACK_WHOOSH_PATH = os.path.join(os.path.dirname(__file__), 'haystack/whoosh')
 HAYSTACK_LIMIT_TO_REGISTERED_MODELS = False
 
 CKEDITOR_CONFIGS = {
     'admin': {
         'toolbar': 'Full',
-        'width':1000,
-        'height':200,
+        'width': 1000,
+        'height': 200,
     },
-   'arth': {
+    'arth': {
         'toolbar': 'Basic',
-        'width':800,
-        'height':200,
+        'width': 800,
+        'height': 200,
     },
     'default': {
         'toolbar': 'Full',

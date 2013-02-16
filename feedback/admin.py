@@ -7,7 +7,7 @@ from django.core.mail import EmailMessage, BadHeaderError
 
 
 class FeedbackAdmin(admin.ModelAdmin):
-    list_display = ('name','email','feedback','date_sub')
+    list_display = ('name', 'email', 'feedback', 'date_sub')
     ordering = ('-date_sub',)
 
-admin.site.register(Feedback,FeedbackAdmin)
+admin.site.register(Feedback, FeedbackAdmin)

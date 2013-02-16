@@ -44,7 +44,7 @@ class SearchView(object):
         self.query = self.get_query()
         self.results = self.get_results()
 
-        return self.create_response() #create response
+        return self.create_response()  # create response
 
     def build_form(self, form_kwargs=None):
         """
@@ -115,21 +115,21 @@ class SearchView(object):
         """
         (paginator, page) = self.build_page()
 
-        #Add anything to context here
+        # Add anything to context here
         context = {
             'query': self.query,
             'form': self.form,
             'page': page,
             'paginator': paginator,
             'suggestion': None,
-            'list':menu,
+            'list': menu,
         }
 
         if getattr(settings, 'HAYSTACK_INCLUDE_SPELLING', False):
             context['suggestion'] = self.form.get_suggestion()
 
         context.update(self.extra_context())
-        #render to response
+        # render to response
         return render_to_response(self.template, context, context_instance=self.context_class(self.request))
 
 

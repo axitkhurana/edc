@@ -41,7 +41,7 @@ class SearchChangeList(ChangeList):
 
         # Get the list of objects to display on this page.
         try:
-            result_list = paginator.page(self.page_num+1).object_list
+            result_list = paginator.page(self.page_num + 1).object_list
             # Grab just the Django models, since that's what everything else is
             # expecting.
             result_list = [result.object for result in result_list]
@@ -91,9 +91,9 @@ class SearchModelAdmin(ModelAdmin):
             action_form = None
 
         selection_note = ungettext('0 of %(count)d selected',
-            'of %(count)d selected', len(changelist.result_list))
+                                   'of %(count)d selected', len(changelist.result_list))
         selection_note_all = ungettext('%(total_count)s selected',
-            'All %(total_count)s selected', changelist.result_count)
+                                       'All %(total_count)s selected', changelist.result_count)
 
         context = {
             'module_name': force_unicode(self.model._meta.verbose_name_plural),

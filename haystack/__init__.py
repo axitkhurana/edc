@@ -74,10 +74,10 @@ def load_backend(backend_name=None):
             ]
             available_backends.sort()
             if backend_name not in available_backends:
-                raise ImproperlyConfigured, "%r isn't an available search backend. Available options are: %s" % \
-                    (backend_name, ", ".join(map(repr, available_backends)))
+                raise ImproperlyConfigured("%r isn't an available search backend. Available options are: %s" %
+                                           (backend_name, ", ".join(map(repr, available_backends))))
             else:
-                raise # If there's some other error, this must be an error in Django itself.
+                raise  # If there's some other error, this must be an error in Django itself.
 
 
 backend = load_backend(settings.HAYSTACK_SEARCH_ENGINE)

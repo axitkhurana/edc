@@ -512,9 +512,7 @@ class BaseSearchQuery(object):
         """
         raise NotImplementedError("Subclasses must provide a way to generate query fragments via the 'build_query_fragment' method.")
 
-
     # Standard methods to alter the query.
-
     def clean(self, query_fragment):
         """
         Provides a mechanism for sanitizing user input before presenting the
