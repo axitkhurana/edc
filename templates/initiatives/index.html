@@ -1,0 +1,50 @@
+se.html" %}
+{% block sheets %}
+<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}/css/about.css" />
+{% endblock %}
+{% block title %}EDC | About EDC {% endblock %}
+
+<!--menu block-->
+{% block menu %}
+{% include "includes/menu.html" %}
+{% endblock %}
+
+
+{%block facebook%}
+<iframe id="fb" src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FEDC-IITR%2F265096099170&amp;layout=standard&amp;show_faces=false&amp;width=300&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+{%endblock%}
+
+<!--content block-->
+{% block content %}
+        <div id="main_img"><img src="{{MEDIA_URL}}/images/home/home.jpg" /></div>
+
+        <div id="content">
+                <div class="outer" style="width:340px;margin:0px;">
+                        <span class="heading"><span class="heading_in">SIF</span></span>
+                        <div id="about_edc_in" class="content_in" style="border:0;">
+                                <span class="content_in_span">Start-up Internship Fair (SIF) is an initiative by EDC to bridge the link between entrepreneurs and students in a start-up ecosystem. It endeavors to provide a platform wherein students can seek internships in start-ups. SIF has potential to be immensely beneficial to both the start-ups and students. <br/>
+Students get the hands on experience of working in a start-up, working with founders and top management, and understanding the nitty gritties of how a start-up actually works. The start- ups get a pool of young and fresh minds to work and provide them a new perspective. <br/>
+
+Read more about SIF 2012 here. </span> </div>
+                </div>
+
+               <div class="outer" style="width:320px;">
+                        <span class="heading"><span class="heading_in">PRERNA YATRA</span></span>
+                        <div id="about_vision_in" class="content_in" style="border:0;">
+                                <span class="content_in_span">Prerna Yatra is two- day entrepreneurial trip. Inspired by the Jagriti Yatra, it is EDC's endeavor for IIT R's very own Yatra. The trip is an opportunity to meet in person entrepreneurs, innovators and some unsung heroes. We think it can be an extremely inspiring experience as there is no better way to get inspired than by hearing their stories for them. </span>
+                        </div>
+                </div>
+
+                <div class="outer" style="width:300px;">
+                                <span class="heading"><span class="heading_in">TIEDA</span></span>
+                                <div id="about_team_in" class="content_in" style="border:0;">
+                                        <span class="content_in_span">TIEDA centre is being developed as an incubator in IIT Roorkee for the benefits of its students, alumni and faculty. It has been set up with the aim of to encourage them to convert their ideas and concepts into products and technologies for their visible commercialisation. The centre will provide the much needed cushion in the early stages of a start-up. 
+
+                                        </span>
+                                </div>
+                </div>
+
+        </div>
+{% endblock %}
+
+
