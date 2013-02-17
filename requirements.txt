@@ -1,0 +1,12 @@
+Django==1.2.5
+PIL==1.1.7
+Pillow==1.7.8
+Whoosh==2.4.1
+autopep8==0.8.6
+django-ckeditor==3.6.2.1
+html5lib==0.95
+pep8==1.4.2
+pisa==3.0.33
+pyflakes==0.6.1
+reportlab==2.6
+wsgiref==0.1.2
